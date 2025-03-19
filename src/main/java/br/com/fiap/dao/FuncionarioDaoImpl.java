@@ -1,6 +1,7 @@
 package br.com.fiap.dao;
 
 import br.com.fiap.entity.Funcionario;
+import br.com.fiap.exception.IdNaoEncontradoException;
 
 import javax.persistence.EntityManager;
 
