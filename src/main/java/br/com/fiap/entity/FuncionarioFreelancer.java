@@ -1,15 +1,18 @@
 package br.com.fiap.entity;
 
-public class FuncionarioFreelancer implements FuncionarioInterface {
-    private String nome;
-    private double horasTrabalhadas;
-    private double valorHora;
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+
+@Entity
+@DiscriminatorValue("Freelancer")
+public class FuncionarioFreelancer extends Funcionario {
     private double taxaServico = 50.0;
 
+    public FuncionarioFreelancer() {
+    }
+
     public FuncionarioFreelancer(String nome, double horasTrabalhadas, double valorHora) {
-        this.nome = nome;
-        this.horasTrabalhadas = horasTrabalhadas;
-        this.valorHora = valorHora;
+        super(nome, horasTrabalhadas, valorHora);
     }
 
     @Override

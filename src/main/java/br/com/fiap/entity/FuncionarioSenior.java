@@ -1,7 +1,15 @@
 package br.com.fiap.entity;
 
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+
+@Entity
+@DiscriminatorValue("Senior")
 public class FuncionarioSenior extends Funcionario {
     private double bonusPor15Horas = 100.0;
+
+    public FuncionarioSenior() {
+    }
 
     public FuncionarioSenior(String nome, double horasTrabalhadas, double valorHora) {
         super(nome, horasTrabalhadas, valorHora);
