@@ -1,5 +1,7 @@
 package br.com.fiap.dao;
 
+import br.com.fiap.entity.Funcionario;
+
 import javax.persistence.EntityManager;
 
 public class FuncionarioDaoImpl implements FuncionarioDAO{
