@@ -1,16 +1,15 @@
 package br.com.fiap.entity;
 
-public class Funcionario implements FuncionarioInterface{
+public class Funcionario implements FuncionarioInterface {
     protected String nome;
+    protected double horasTrabalhadas;
+    protected double valorHora;
 
     public Funcionario(String nome, double horasTrabalhadas, double valorHora) {
         this.nome = nome;
         this.horasTrabalhadas = horasTrabalhadas;
         this.valorHora = valorHora;
     }
-
-    protected double horasTrabalhadas;
-    protected double valorHora;
 
     @Override
     public double calcularSalario() {
@@ -19,7 +18,10 @@ public class Funcionario implements FuncionarioInterface{
 
     @Override
     public void imprimirInformacao() {
-        System.out.println("Horas trabalhadas: "+ horasTrabalhadas
-                +"\nSalário do funcionário por hora: "+ valorHora +"\nSalário do Funcionário: "+ calcularSalario());
+        System.out.println("Funcionário: " + nome);
+        System.out.println("Horas Trabalhadas: " + horasTrabalhadas);
+        System.out.println("Valor por Hora: R$ " + valorHora);
+        System.out.println("Salário: R$ " + calcularSalario());
     }
 }
+
