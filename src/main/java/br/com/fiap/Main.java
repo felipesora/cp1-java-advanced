@@ -8,6 +8,7 @@ public class Main {
         FuncionarioInterface func2 = new FuncionarioSenior("Felipe", 45, 30);
         FuncionarioInterface func3 = new FuncionarioFreelancer("Vinicius", 30, 25);
         FuncionarioInterface func4 = new FuncionarioEstagiario("Gustavo", 20, 15);
+        FuncionarioInterface func5 = new FuncionarioNoturno("Marcel", 60, 20);
 
         System.out.println("\n--- Funcionário Comum ---");
         func1.imprimirInformacao();
@@ -20,5 +21,8 @@ public class Main {
 
         System.out.println("\n--- Funcionário Estagiário ---");
         func4.imprimirInformacao();
+
+        System.out.println("\n--- Funcionário Noturno ---");
+        func5.imprimirInformacao();
     }
 }
