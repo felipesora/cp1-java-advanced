@@ -16,6 +16,7 @@ public class Main {
         int opcao, id;
         String nome;
         double horasTrabalhadas, valorHora;
+        Funcionario funcionario;
         FuncionarioSenior senior;
         FuncionarioNoturno noturno;
         FuncionarioEstagiario estagiario;
@@ -36,7 +37,7 @@ public class Main {
             System.out.println("============================");
             System.out.println("1. Selecionar um Funcionário");
             System.out.println("2. Cadastrar um Funcionário");
-            System.out.println("3. Editar um Funcionário");
+            System.out.println("3. Alterar um Funcionário");
             System.out.println("4. Remover um Funcionário");
             System.out.println("5. Sair");
             System.out.println("============================");
@@ -47,6 +48,9 @@ public class Main {
                 scanner.nextLine();
 
                 if (opcao == 1) {
+                    System.out.println("==============================");
+                    System.out.println("|   Exibição de Funcionário  |");
+                    System.out.println("==============================");
                     System.out.println("Digite o id do funcionário: ");
                     id = scanner.nextInt();
                     scanner.nextLine();
@@ -169,8 +173,101 @@ public class Main {
                     }
 
                 } else if (opcao == 3) {
-                    System.out.println("Editando funcionário...");
+                    System.out.println("=====================================");
+                    System.out.println("|   Alteração de dados Funcionário  |");
+                    System.out.println("=====================================");
+                    System.out.println("Digite o ID do funcionário: ");
+                    id = scanner.nextInt();
+                    scanner.nextLine();
 
+
+                    try {
+
+                        funcionario = dao.buscarPorId(id);
+
+                        if (funcionario == null) {
+                            System.out.println("Funcionário não encontrado.");
+                            return;
+                        }
+
+                        System.out.println("=====================================");
+                        System.out.println("1. Nome");
+                        System.out.println("2. Carga Horária");
+                        System.out.println("3. Valor Hora");
+                        System.out.println("4. Todas as opções anteriores");
+                        System.out.println("=====================================");
+                        System.out.println("Escolha uma opção para alterar: ");
+
+                        opcao = scanner.nextInt();
+                        scanner.nextLine();
+
+                        if (opcao == 1) {
+                            System.out.println("Digite o novo NOME: ");
+                            nome = scanner.nextLine();
+                            funcionario.setNome(nome);
+
+                            System.out.println("Editando nome do funcionário...");
+                            try {
+                                dao.atualizar(funcionario);
+                                dao.commit();
+                                System.out.println("Nome do funcionário atualizado!");
+                            } catch (Exception e) {
+                                System.out.println(e.getMessage());
+                            }
+                        } else if (opcao == 2) {
+                            System.out.println("Digite a nova carga horária: ");
+                            horasTrabalhadas = scanner.nextDouble();
+                            funcionario.setHorasTrabalhadas(horasTrabalhadas);
+
+                            System.out.println("Editando carga horária do funcionário...");
+                            try {
+                                dao.atualizar(funcionario);
+                                dao.commit();
+                                System.out.println("Carga horária do funcionário atualizada!");
+                            } catch (Exception e) {
+                                System.out.println(e.getMessage());
+                            }
+                        } else if (opcao == 3) {
+                            System.out.println("Digite o novo valor por hora: ");
+                            valorHora = scanner.nextDouble();
+                            funcionario.setValorHora(valorHora);
+
+                            System.out.println("Editando valor hora do funcionário...");
+                            try {
+                                dao.atualizar(funcionario);
+                                dao.commit();
+                                System.out.println("Valor hora do funcionário atualizado!");
+                            } catch (Exception e) {
+                                System.out.println(e.getMessage());
+                            }
+                        } else if (opcao == 4) {
+                            System.out.println("Digite o novo NOME: ");
+                            nome = scanner.nextLine();
+                            funcionario.setNome(nome);
+
+                            System.out.println("Digite a nova carga horária: ");
+                            horasTrabalhadas = scanner.nextDouble();
+                            funcionario.setHorasTrabalhadas(horasTrabalhadas);
+
+                            System.out.println("Digite o novo valor por hora: ");
+                            valorHora = scanner.nextDouble();
+                            funcionario.setValorHora(valorHora);
+
+                            System.out.println("Editando todos os dados do funcionário...");
+                            try {
+                                dao.atualizar(funcionario);
+                                dao.commit();
+                                System.out.println("Todos os dados do funcionário foram atualizados!");
+                            } catch (Exception e) {
+                                System.out.println(e.getMessage());
+                            }
+                        } else {
+                            System.out.println("Opção inválida.");
+                        }
+
+                    } catch (Exception e) {
+                        System.out.println("Erro ao buscar funcionário: " + e.getMessage());
+                    }
                 } else if (opcao == 4) {
                     System.out.println("Removendo funcionário...");
 
