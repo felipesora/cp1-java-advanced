@@ -2,11 +2,9 @@ package br.com.fiap.view;
 
 import br.com.fiap.dao.FuncionarioDAO;
 import br.com.fiap.dao.FuncionarioDaoImpl;
-import br.com.fiap.entity.FuncionarioEstagiario;
-import br.com.fiap.entity.FuncionarioFreelancer;
-import br.com.fiap.entity.FuncionarioNoturno;
-import br.com.fiap.entity.FuncionarioSenior;
+import br.com.fiap.entity.*;
 import br.com.fiap.exception.CommitException;
+import br.com.fiap.exception.IdNaoEncontradoException;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -54,6 +52,15 @@ public class Main {
                     scanner.nextLine();
 
                     System.out.println("Buscando funcionário...");
+
+                    try {
+                        Funcionario busca = dao.buscarPorId(id);
+                        System.out.println();
+                        busca.imprimirInformacao();
+
+                    } catch (IdNaoEncontradoException e) {
+                        System.out.println("Erro ao buscar funcionário: " + e.getMessage());
+                    }
 
 
                 } else if (opcao == 2) {
