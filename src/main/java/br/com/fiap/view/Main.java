@@ -269,7 +269,37 @@ public class Main {
                         System.out.println("Erro ao buscar funcionário: " + e.getMessage());
                     }
                 } else if (opcao == 4) {
-                    System.out.println("Removendo funcionário...");
+                    System.out.println("=============================");
+                    System.out.println("|   Remoção de Funcionário  |");
+                    System.out.println("=============================");
+                    System.out.println("Digite o ID do funcionário: ");
+                    id = scanner.nextInt();
+                    scanner.nextLine();
+
+                    try {
+                        funcionario = dao.buscarPorId(id);
+
+                        if (funcionario == null) {
+                            System.out.println("Funcionário não encontrado.");
+                            return;
+                        }
+
+                        System.out.println("ID: " + funcionario.getId() + " | Nome: " + funcionario.getNome());
+                        System.out.println("Tem certeza que deseja remover esse Funcionário? (SIM/NÃO)");
+                        String opcaoRemocao = scanner.nextLine();
+
+
+                        if (opcaoRemocao.equalsIgnoreCase("SIM")) {
+                            System.out.println("Removendo Funcionário...");
+                            dao.remover(id);
+                            dao.commit();
+                            System.out.println("Funcionário removido com sucesso!");
+                        } else {
+                            System.out.println("Remoção cancelada.");
+                        }
+                    } catch (Exception e) {
+                        System.out.println("Erro ao tentar remover o funcionário: " + e.getMessage());
+                    }
 
                 } else if (opcao == 5) {
                     System.out.println("Saindo...");
