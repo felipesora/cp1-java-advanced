@@ -2,7 +2,7 @@ package br.com.fiap;
 
 import br.com.fiap.entity.*;
 
-public class Main {
+public class Teste {
     public static void main(String[] args) {
         FuncionarioInterface func1 = new Funcionario("Augusto", 40, 20);
         FuncionarioInterface func2 = new FuncionarioSenior("Felipe", 45, 30);
