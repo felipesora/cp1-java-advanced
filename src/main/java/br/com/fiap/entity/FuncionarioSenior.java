@@ -23,9 +23,12 @@ public class FuncionarioSenior extends Funcionario {
 
     @Override
     public void imprimirInformacao() {
+        System.out.println("======================================");
+        System.out.println("Funcionário Sênior");
         super.imprimirInformacao();
         System.out.println("Bônus recebido: R$ " + ((int)(horasTrabalhadas / 15) * bonusPor15Horas));
         System.out.println("Salário Final com Bônus: R$ " + calcularSalario());
+        System.out.println("======================================");
     }
 }
 

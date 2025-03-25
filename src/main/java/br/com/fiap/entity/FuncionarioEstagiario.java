@@ -22,9 +22,12 @@ public class FuncionarioEstagiario extends Funcionario {
 
     @Override
     public void imprimirInformacao() {
+        System.out.println("======================================");
+        System.out.println("Funcionario Estágiário");
         super.imprimirInformacao();
         System.out.println("Desconto de Bolsa: 10%");
         System.out.println("Salário Final: R$ " + calcularSalario());
+        System.out.println("======================================");
     }
 }
 

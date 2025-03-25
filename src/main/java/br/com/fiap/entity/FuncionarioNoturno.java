@@ -24,8 +24,11 @@ public class FuncionarioNoturno extends Funcionario {
 
     @Override
     public void imprimirInformacao() {
+        System.out.println("======================================");
+        System.out.println("Funcionário Noturno");
         super.imprimirInformacao();
         System.out.println("Adicional Noturno: R$ " + (horasTrabalhadas * valorHora * ADICIONAL_NOTURNO));
         System.out.println("Salário Final com Adicional: R$ " + calcularSalario());
+        System.out.println("======================================");
     }
 }

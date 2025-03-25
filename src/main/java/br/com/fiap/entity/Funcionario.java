@@ -44,7 +44,7 @@ public class Funcionario implements FuncionarioInterface {
 
     @Override
     public void imprimirInformacao() {
-        System.out.println("Funcionário: " + nome);
+        System.out.println("Nome: " + nome);
         System.out.println("Horas Trabalhadas: " + horasTrabalhadas);
         System.out.println("Valor por Hora: R$ " + valorHora);
         System.out.println("Salário: R$ " + calcularSalario());

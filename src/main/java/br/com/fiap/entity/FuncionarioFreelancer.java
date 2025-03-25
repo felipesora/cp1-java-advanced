@@ -22,11 +22,14 @@ public class FuncionarioFreelancer extends Funcionario {
 
     @Override
     public void imprimirInformacao() {
-        System.out.println("Funcionário Freelancer: " + nome);
+        System.out.println("======================================");
+        System.out.println("Funcionário Freelancer");
+        System.out.println("Nome: " + nome);
         System.out.println("Horas Trabalhadas: " + horasTrabalhadas);
         System.out.println("Valor por Hora: R$ " + valorHora);
         System.out.println("Taxa de Serviço: R$ " + taxaServico);
         System.out.println("Salário Final: R$ " + calcularSalario());
+        System.out.println("======================================");
     }
 }
 
