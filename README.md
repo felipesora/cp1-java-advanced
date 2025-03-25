@@ -19,7 +19,7 @@ A interface `FuncionarioDAO` define os métodos para realizar operações de ace
 * `buscarPorId(int id)`: Busca um funcionário pelo seu ID.
 * `commit()`: Salva as alterações no banco de dados.
 
-![Imagem da Interface FuncionarioDAO](cp1-java-advanced/images/interface-funcinarioDao)
+![Imagem da Interface FuncionarioDAO](cp1-java-advanced/images/interface-funcinarioDao.png)
 
 ### Classe `FuncionarioDaoImpl`
 
