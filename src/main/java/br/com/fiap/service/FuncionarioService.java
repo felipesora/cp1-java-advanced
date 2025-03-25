@@ -203,7 +203,8 @@ public class FuncionarioService {
                 }
             } else if (opcao == 2) {
                 System.out.println("Digite a nova carga horária: ");
-                horasTrabalhadas = scanner.nextDouble();
+                String horasTrabalhadasStr = scanner.nextLine().replace(",", ".");
+                horasTrabalhadas = Double.parseDouble(horasTrabalhadasStr);
                 funcionario.setHorasTrabalhadas(horasTrabalhadas);
 
                 System.out.println("Editando carga horária do funcionário...");
@@ -216,7 +217,8 @@ public class FuncionarioService {
                 }
             } else if (opcao == 3) {
                 System.out.println("Digite o novo valor por hora: ");
-                valorHora = scanner.nextDouble();
+                String valorHoraStr = scanner.nextLine().replace(",", ".");
+                valorHora = Double.parseDouble(valorHoraStr);
                 funcionario.setValorHora(valorHora);
 
                 System.out.println("Editando valor hora do funcionário...");
@@ -233,11 +235,13 @@ public class FuncionarioService {
                 funcionario.setNome(nome);
 
                 System.out.println("Digite a nova carga horária: ");
-                horasTrabalhadas = scanner.nextDouble();
+                String horasTrabalhadasStr = scanner.nextLine().replace(",", ".");
+                horasTrabalhadas = Double.parseDouble(horasTrabalhadasStr);
                 funcionario.setHorasTrabalhadas(horasTrabalhadas);
 
                 System.out.println("Digite o novo valor por hora: ");
-                valorHora = scanner.nextDouble();
+                String valorHoraStr = scanner.nextLine().replace(",", ".");
+                valorHora = Double.parseDouble(valorHoraStr);
                 funcionario.setValorHora(valorHora);
 
                 System.out.println("Editando todos os dados do funcionário...");
