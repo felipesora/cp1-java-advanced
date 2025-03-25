@@ -7,6 +7,12 @@
 * RM: 555462 Nome: Felipe Ulson Sora
 * RM: 558515 Nome: Gustavo Bispo Cordeiro
 
+## Resumo do Projeto
+
+Este projeto consiste em um sistema de gerenciamento de funcionários desenvolvido em Java, utilizando o padrão DAO (Data Access Object) para acesso a dados e o JPA (Java Persistence API) para mapeamento objeto-relacional. O sistema permite realizar operações de CRUD (Create, Read, Update, Delete) em diferentes tipos de funcionários, como estagiários, freelancers, funcionários noturnos e sênior.
+
+O projeto utiliza uma arquitetura em camadas, separando a lógica de acesso a dados, a lógica de negócios e a camada de visualização. Isso torna o código mais organizado, modular e fácil de manter.
+
 ## Explicação das Classes DAO
 
 ### Interface `FuncionarioDAO`
