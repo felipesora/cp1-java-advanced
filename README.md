@@ -19,6 +19,8 @@ A interface `FuncionarioDAO` define os métodos para realizar operações de ace
 * `buscarPorId(int id)`: Busca um funcionário pelo seu ID.
 * `commit()`: Salva as alterações no banco de dados.
 
+![Imagem da Interface FuncionarioDAO](cp1-java-advanced/images/interface-funcinarioDao)
+
 ### Classe `FuncionarioDaoImpl`
 
 A classe `FuncionarioDaoImpl` implementa a interface `FuncionarioDAO` e fornece a implementação concreta dos métodos de acesso a dados usando o JPA (Java Persistence API).
