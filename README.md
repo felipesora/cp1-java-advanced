@@ -31,6 +31,8 @@ A classe `FuncionarioDaoImpl` implementa a interface `FuncionarioDAO` e fornece 
 
 Essa abordagem com interface e implementação permite que o código seja mais flexível e fácil de testar, pois podemos trocar a implementação do DAO sem alterar o restante do código.
 
+![Imagem da Classe FuncionarioDAOImpl](images/classe-funcionarioDao.png)
+
 ## Explicação das Classes de Entidade
 
 ### Interface `FuncionarioInterface`
@@ -39,6 +41,8 @@ A interface `FuncionarioInterface` define os métodos comuns a todos os tipos de
 
 * `calcularSalario()`: Calcula o salário do funcionário.
 * `imprimirInformacao()`: Imprime as informações do funcionário.
+
+![Imagem da Interface FuncionarioInterface](images/interface-FuncionarioInterface.png)
 
 ### Classe `Funcionario`
 
@@ -49,6 +53,8 @@ A classe `Funcionario` é a classe base para todos os tipos de funcionários. El
 * **Métodos:** Implementa os métodos da interface `FuncionarioInterface` e fornece métodos getters e setters para os atributos.
 * **Anotações JPA:** Utiliza anotações como `@Id`, `@Column`, `@GeneratedValue` e `@SequenceGenerator` para mapear os atributos para as colunas da tabela.
 * **@PostPersist:** Possui um método anotado com `@PostPersist` para executar uma ação após a persistência do objeto.
+
+![Imagem da Classe Funcionario](images/classe-Funcionario.png)
 
 ### Classes de Funcionários Específicos
 
@@ -68,11 +74,15 @@ A classe `CommitException` é uma exceção personalizada que estende `RuntimeEx
 
 * **Construtores:** Possui um construtor padrão que define a mensagem de erro como "Erro ao realizar o commit" e um construtor que permite definir uma mensagem de erro personalizada.
 
+![Imagem da Exception CommitException](images/commitException.png)
+
 ### `IdNaoEncontradoException`
 
 A classe `IdNaoEncontradoException` é outra exceção personalizada que estende `RuntimeException`. Ela é lançada quando um funcionário com o ID especificado não é encontrado no banco de dados.
 
 * **Construtor:** Possui um construtor que recebe uma mensagem de erro como parâmetro.
+
+![Imagem da Exception IdNaoEncontradoException](images/IdNaoEncontradoException.png)
 
 Essas exceções personalizadas ajudam a tornar o código mais robusto e fácil de depurar, pois fornecem informações específicas sobre os erros que podem ocorrer durante a execução do programa.
 
@@ -89,6 +99,8 @@ A classe `FuncionarioService` é responsável por encapsular a lógica de negóc
 
 Essa abordagem com uma classe de serviço separa a lógica de negócios da lógica de acesso a dados, tornando o código mais organizado, fácil de manter e testar.
 
+![Imagem da Classe FuncionarioService](images/funcionario-service.png)
+
 ## Explicação da Camada de Visualização (View)
 
 ### Classe `Main`
@@ -101,6 +113,8 @@ A classe `Main` é responsável por interagir com o usuário e chamar os método
 * **Tratamento de Exceções:** O programa lida com exceções que podem ocorrer durante a entrada do usuário ou durante as operações de CRUD.
 
 Essa abordagem com uma camada de visualização separada da lógica de negócios torna o código mais modular e fácil de manter, pois permite que a interface do usuário seja alterada sem afetar a lógica de negócios.
+
+![Imagem da Classe Main](images/main.png)
 
 ## Dependências do Projeto
 
